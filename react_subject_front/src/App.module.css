@@ -16,19 +16,21 @@ body {
 .header > h1 {
   margin: 0;
   text-align: center;
+  color: gray;
 }
 .subject_wrap {
   width: 1000px;
   margin: 30px auto;
 }
-.content_wrap {
+.contents_wrap {
   display: flex;
+  flex-direction: column;
   gap: 20px;
   margin-top: 18px;
 }
-.active {
-  color: #fff;
-  background-color: gray;
+.content_wrap {
+  display: flex;
+  gap: 20px;
 }
 .category_wrap {
   width: 250px;
@@ -42,14 +44,14 @@ body {
 }
 .filter_wrap {
   display: flex;
-  gap: 10px;
   justify-content: space-between;
-
   margin-bottom: 8px;
 }
 .filter_wrap > .level_wrap {
   display: flex;
   gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
 .container {
   flex-grow: 1;
@@ -60,13 +62,16 @@ body {
   flex-direction: column;
   gap: 5px;
 }
-.level_item {
-  display: flex;
-  gap: 8px;
-}
-.level_item > label {
-  padding: 5px 12px;
+.level_wrap > label {
+  padding: 5px;
   cursor: pointer;
+  color: #ccc;
+}
+.level_wrap > .active {
+  padding: 5px;
+  cursor: pointer;
+  color: gray;
+  font-weight: 600;
 }
 .listname {
   background-color: gray;
@@ -118,6 +123,7 @@ body {
   outline: none;
   border: 1px solid #ccc;
 }
+.reset > button,
 .search_wrap > button {
   border: none;
   margin: 0px 10px;
@@ -131,4 +137,15 @@ body {
   color: #fff;
   background-color: gray;
   cursor: pointer;
+}
+.reset > button {
+  width: 70px;
+  margin: 0;
+}
+.active_c {
+  width: max-content;
+  background-color: gray;
+  padding: 4px 8px;
+  color: #fff;
+  border-radius: 8px;
 }

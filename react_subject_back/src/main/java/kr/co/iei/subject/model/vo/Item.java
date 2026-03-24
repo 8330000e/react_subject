@@ -11,4 +11,5 @@ public class Item {
 	private Integer category;
 	private Integer level;
 	private Integer order;
+	private String keyword;
 }

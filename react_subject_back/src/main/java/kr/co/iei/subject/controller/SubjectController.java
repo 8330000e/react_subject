@@ -25,12 +25,7 @@ public class SubjectController {
 	@GetMapping
 	public ResponseEntity<?> selectAll(@ModelAttribute Item request) {
 		List<Subject> subject = subjectService.selectAll(request); 
-		return ResponseEntity.ok(subject);
-	}
-	
-	@GetMapping(value="/{level}")
-	public ResponseEntity<?> selectAll(@RequestParam Integer level) {
-		List<Subject> subject = subjectService.selectAlllevel(level); 
+		System.out.println(request);
 		return ResponseEntity.ok(subject);
 	}
 }

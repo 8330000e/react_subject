@@ -3,6 +3,8 @@
 <mapper namespace="kr.co.iei.subject.model.dao.SubjectDao">
 	<select id="selectAll" resultType="subject">
 		select * from subject_tbl
+		<if test="category == 0">
+		</if>
 		<if test="category == 1">
 		where subject_category = 1
 		</if>
@@ -12,7 +14,21 @@
 		<if test="category == 3">
 		where subject_category = 3
 		</if>
-		<if test="order > -1">
+		<if test="level == 0 ">
+		</if>
+		<if test="level == 1">
+		and subject_level = 1
+		</if>
+		<if test="level == 2">
+		and subject_level = 2
+		</if>
+		<if test="level == 3">
+		and subject_level = 3
+		</if>
+		<if test="keyword == #{keyword}">
+			and subject_title like '%'||#{keyword}||'%'
+		</if>
+		<if test="order == 0">
 			order by subject_no asc
 		</if>
 		<if test="order == 1">
@@ -30,13 +46,13 @@
 	</select>
 	<select id="selectAlllevel" resultType="subject">
 		select * from subject_tbl
-		<if test="category == 1">
+		<if test="level == 1">
 		where subject_level = 1
 		</if>
-		<if test="category == 2">
+		<if test="level == 2">
 		where subject_level = 2
 		</if>
-		<if test="category == 3">
+		<if test="level == 3">
 		where subject_level = 3
 		</if>
 	</select>
